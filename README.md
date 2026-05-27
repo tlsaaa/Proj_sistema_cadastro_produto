@@ -1,5 +1,7 @@
 # Comandos para Testar o Projeto
 
+A documentação completa do projeto está em `DOCUMENTACAO.md`.
+
 Para testar, digite esses comandos no terminal aberto na pasta do projeto:
 
 ```bash
