@@ -143,10 +143,3 @@ Em Windows:
 - O uso de `system("cls")` e `sleep(2)` faz o projeto depender de comandos do sistema e pode não funcionar da mesma forma em todos os ambientes.
 - O campo `nome` aceita até 49 caracteres.
 
-## 11. Melhorias Sugeridas
-
-- Implementar atualização e exclusão de produtos.
-- Usar `std::string` em vez de `char nome[50]` para maior segurança.
-- Validar melhor as entradas do usuário.
-- Organizar compilação com `Makefile` ou `CMakeLists.txt`.
-- Tratar erros de `sqlite3_finalize()` e liberar recursos em caso de falha.
