@@ -3,16 +3,16 @@
 #include <cstdlib>
 #include<stdio.h>
 
-void controllerMenuInicial() { 
-    sqlite3* db = conectar();
+void controllerMenuInicial (sqlite3* db) { 
+    
     int opcao = menuInicial();
 
     switch (opcao) {
         case 1:
-            controllerCadastrarProduto();
+            controllerCadastrarProduto(db);
             break;
         case 2:
-            controllerListarProdutos();
+            controllerListarProdutos(db);
             break;
         case 3:
             // controllerAtualizarProduto();
@@ -27,5 +27,4 @@ void controllerMenuInicial() {
             printf("Opcao invalida!\n");
             break;
     }
-    desconectar(db);
 }

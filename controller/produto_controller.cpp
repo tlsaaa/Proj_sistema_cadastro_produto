@@ -1,25 +1,21 @@
 #include "controllers.h"
 #include <stdio.h>
 
-void controllerCadastrarProduto() {
-    sqlite3* db = conectar();
+void controllerCadastrarProduto(sqlite3* db) {
     Produto novoProduto = telaCadastroProduto();
     bool sucesso = salvarProduto(db, novoProduto);
     telaSucessoCadastro(sucesso);
-    controllerMenuInicial();
-    desconectar(db);
+    controllerMenuInicial(db);
+    
 }
 
-    void controllerListarProdutos() {
-        sqlite3* db = conectar(); 
+    void controllerListarProdutos(sqlite3* db) { 
         vector<Produto> produtos = listarProdutos(db);
         char opcao = telaListarProdutos(produtos);
 
       if (opcao == 'S' || opcao == 's') {
-    desconectar(db);
-    controllerMenuInicial();
+    controllerMenuInicial(db);
         } else {
-          desconectar(db);
           exit(0);
 }
     }
