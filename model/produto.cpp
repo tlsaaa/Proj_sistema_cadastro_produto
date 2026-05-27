@@ -2,10 +2,10 @@
 #include <stdio.h>
 #include <string.h>
 
-void salvarProduto(sqlite3* db, struct Produto p) {
+bool salvarProduto(sqlite3* db, struct Produto p) {
     if (db == NULL) {
         printf("Erro: banco de dados nao conectado!\n");
-        return;
+        return false;
     }
 
     sqlite3_stmt* stmt;
@@ -14,7 +14,7 @@ void salvarProduto(sqlite3* db, struct Produto p) {
 
     if (sqlite3_prepare_v2(db, sql, -1, &stmt, NULL) != SQLITE_OK) {
         printf("Erro no prepare: %s\n", sqlite3_errmsg(db));
-        return;
+        return false;
     }
 
     sqlite3_bind_text(stmt, 1, p.nome, -1, SQLITE_STATIC);
@@ -22,9 +22,11 @@ void salvarProduto(sqlite3* db, struct Produto p) {
 
     if (sqlite3_step(stmt) != SQLITE_DONE) {
         printf("Erro ao inserir: %s\n", sqlite3_errmsg(db));
+        return false;
     }
 
     sqlite3_finalize(stmt);
+    return true;
 }
 
 vector<Produto> listarProdutos(sqlite3* db) {

@@ -1,11 +1,7 @@
 #include <stdio.h>
-#include "model/db_conexao/db.h"
 #include "controller/controllers.h"
 int main() {
-    sqlite3* db = conectar();
-
-    controllerMenuInicial(db);
-
-    desconectar(db);
+    printf("BEM VINDO AO SISTEMA DE GERENCIAMENTO DE PRODUTOS\n");
+    controllerMenuInicial();
     return 0;
 }

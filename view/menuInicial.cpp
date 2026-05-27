@@ -7,7 +7,6 @@ int menuInicial(){
 
     int opcao;
     system("cls");
-    printf("BEM VINDO AO SISTEMA DE GERENCIAMENTO DE PRODUTOS\n");
     printf("ESCOLHA UMA DAS OPÇÕES ABAIXO:\n");
     printf("1 - CADASTRAR NOVO PRODUTO\n");
     printf("2 - LISTAR PRODUTOS\n");

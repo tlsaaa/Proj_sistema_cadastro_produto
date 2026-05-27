@@ -6,7 +6,7 @@
 
 using namespace std;
 
-void salvarProduto(sqlite3* db, struct Produto p);
+bool salvarProduto(sqlite3* db, struct Produto p);
 vector<Produto> listarProdutos(sqlite3* db);
 
 #endif
