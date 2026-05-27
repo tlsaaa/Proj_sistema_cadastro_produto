@@ -1,16 +1,12 @@
 #ifndef PRODUTO_H
 #define PRODUTO_H
-
-
+#include <vector>
 #include "sqlite/sqlite3.h"
+#include "../types/produto_struct.h"
 
-struct Produto {
-    int id;
-    char nome[50];
-    double preco;
-};
+using namespace std;
 
 void salvarProduto(sqlite3* db, struct Produto p);
-void listarProdutos(sqlite3* db);
+vector<Produto> listarProdutos(sqlite3* db);
 
 #endif
