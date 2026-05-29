@@ -7,6 +7,7 @@ void controllerMenuInicial (sqlite3* db) {
     
     int opcao = menuInicial();
 
+
     switch (opcao) {
         case 1:
             controllerCadastrarProduto(db);
@@ -15,7 +16,7 @@ void controllerMenuInicial (sqlite3* db) {
             controllerListarProdutos(db);
             break;
         case 3:
-            // controllerAtualizarProduto();
+            controllerAtualizarProduto(db);
             break;
         case 4:
             // controllerDeletarProduto();

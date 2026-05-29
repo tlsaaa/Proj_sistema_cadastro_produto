@@ -11,6 +11,8 @@ printf("DIGITE O NOME DO PRODUTO: ");
 scanf(" %49s", novoProduto.nome);
 printf("DIGITE O PRECO DO PRODUTO: ");
 scanf(" %lf", &novoProduto.preco);
+printf("DIGITE A QUANTIDADE DO PRODUTO: ");
+scanf(" %d", &novoProduto.quantidade);
 
 return novoProduto;
 

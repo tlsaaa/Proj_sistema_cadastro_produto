@@ -7,7 +7,8 @@ void criarTabelas (sqlite3* db){
    "CREATE TABLE IF NOT EXISTS produtos ("
     "id_produto INTEGER PRIMARY KEY AUTOINCREMENT,"
     "nome_produto TEXT NOT NULL,"
-    "preco REAL"
+    "preco REAL,"
+    "quantidade INTEGER"
     ");";
     sqlite3_exec(db, sql, NULL, NULL, NULL);
 }

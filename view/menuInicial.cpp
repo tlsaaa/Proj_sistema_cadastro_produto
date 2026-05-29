@@ -14,7 +14,7 @@ int menuInicial(){
     printf("4 - DELETAR UM PRODUTO\n");
     printf("5 - SAIR\n");
     scanf("%d", &opcao);
-
+    
     return opcao;
 
 }

@@ -19,3 +19,16 @@ void controllerCadastrarProduto(sqlite3* db) {
           exit(0);
 }
     }
+
+void controllerAtualizarProduto(sqlite3* db) {
+    int id = telaParaPassarId();
+    Produto produto = telaAtualizarProduto();
+    Produto produtoAtualizado = atualizarProduto(db, id, produto);
+    char opcao = telaSucessoAtualizacao(produtoAtualizado);
+    if (opcao == 'S' || opcao == 's') {
+        controllerMenuInicial(db);
+    } else {
+        exit(0);
+    }
+    controllerMenuInicial(db);
+}

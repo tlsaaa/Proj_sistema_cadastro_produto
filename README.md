@@ -11,7 +11,7 @@ gcc -c model/sqlite/sqlite3.c -o model/sqlite/sqlite3.o
 Depois:
 
 ```bash
-g++ main.cpp model/db_conexao/db.cpp model/produto.cpp model/sqlite/sqlite3.o controller/menu_controller.cpp controller/produto_controller.cpp view/menuInicial.cpp view/telaCadastroProduto.cpp view/telaListarProdutos.cpp -o prototipo_projeto -lpthread -ldl
+g++ main.cpp model/db_conexao/db.cpp model/produto.cpp model/sqlite/sqlite3.o controller/menu_controller.cpp controller/produto_controller.cpp view/menuInicial.cpp view/telaCadastroProduto.cpp view/telaListarProdutos.cpp view/telaAtualizarProduto.cpp -o prototipo_projeto -lpthread -ldl
 
 ```
 
