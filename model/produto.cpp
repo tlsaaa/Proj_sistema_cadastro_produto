@@ -110,3 +110,44 @@ Produto atualizarProduto(sqlite3* db, int id, struct Produto p) {
     sqlite3_finalize(stmt);
     return produtoAtualizado;
 }
+
+Produto deletarProduto(sqlite3* db, int id) {
+    sqlite3_stmt* stmt;
+    Produto produtoDeletado = {0};
+
+    const char* sqlSelect = "SELECT id_produto, nome_produto, preco, quantidade FROM produtos WHERE id_produto = ?;";
+    if (sqlite3_prepare_v2(db, sqlSelect, -1, &stmt, NULL) != SQLITE_OK) {
+        printf("Erro ao preparar select: %s\n", sqlite3_errmsg(db));
+        return produtoDeletado;
+    }
+
+    sqlite3_bind_int(stmt, 1, id);
+
+    if (sqlite3_step(stmt) == SQLITE_ROW) {
+        produtoDeletado.id = sqlite3_column_int(stmt, 0);
+        strncpy(produtoDeletado.nome, (const char*)sqlite3_column_text(stmt, 1), 49);
+        produtoDeletado.nome[49] = '\0';
+        produtoDeletado.preco      = sqlite3_column_double(stmt, 2);
+        produtoDeletado.quantidade = sqlite3_column_int(stmt, 3);
+    } else {
+        printf("Produto com ID %d nao encontrado.\n", id);
+        sqlite3_finalize(stmt);
+        return produtoDeletado;
+    }
+    sqlite3_finalize(stmt);
+
+    const char* sqlDelete = "DELETE FROM produtos WHERE id_produto = ?;";
+    if (sqlite3_prepare_v2(db, sqlDelete, -1, &stmt, NULL) != SQLITE_OK) {
+        printf("Erro ao preparar delete: %s\n", sqlite3_errmsg(db));
+        return produtoDeletado;
+    }
+
+    sqlite3_bind_int(stmt, 1, id);
+
+    if (sqlite3_step(stmt) != SQLITE_DONE) {
+        printf("Erro ao executar delete: %s\n", sqlite3_errmsg(db));
+    }
+
+    sqlite3_finalize(stmt);
+    return produtoDeletado;
+}

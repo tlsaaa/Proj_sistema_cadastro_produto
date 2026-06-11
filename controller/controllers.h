@@ -12,5 +12,5 @@ void controllerMenuInicial(sqlite3* db);
 void controllerCadastrarProduto(sqlite3* db);
 void controllerListarProdutos(sqlite3* db);
 void controllerAtualizarProduto(sqlite3* db);
-
+void controllerDeletarProduto(sqlite3* db);
 #endif

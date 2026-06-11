@@ -11,6 +11,6 @@ void telaSucessoCadastro(bool sucesso);
 Produto telaAtualizarProduto();
 char telaSucessoAtualizacao(Produto produtoAtualizado);
 int telaParaPassarId();
-
+char telaSucessoDeletar(Produto produtoDeletado);
 
 #endif

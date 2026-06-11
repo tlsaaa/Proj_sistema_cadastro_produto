@@ -32,3 +32,14 @@ void controllerAtualizarProduto(sqlite3* db) {
     }
     controllerMenuInicial(db);
 }
+
+void controllerDeletarProduto(sqlite3* db) {
+    int id = telaParaPassarId();
+    Produto produtoDeletado = deletarProduto(db, id);
+    char opcao = telaSucessoDeletar(produtoDeletado);
+    if (opcao == 'S' || opcao == 's') {
+        controllerMenuInicial(db);
+    } else {
+        exit(0);
+    }
+}

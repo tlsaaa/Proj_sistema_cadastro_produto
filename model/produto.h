@@ -9,6 +9,6 @@ using namespace std;
 bool salvarProduto(sqlite3* db, struct Produto p);
 vector<Produto> listarProdutos(sqlite3* db);
 Produto atualizarProduto(sqlite3* db, int id, struct Produto p);
-//deletarProduto();
+Produto deletarProduto(sqlite3* db, int id);
 
 #endif

@@ -32,14 +32,6 @@ switch (opcao) {
     }
     return produto;
 }
-
-int telaParaPassarId() {
-    int id;
-    printf("DIGITE O ID DO PRODUTO QUE DESEJA ATUALIZAR: ");
-    scanf(" %d", &id);
-    return id;
-}
-
 char telaSucessoAtualizacao(Produto produtoAtualizado) {
     printf("PRODUTO ATUALIZADO COM SUCESSO!\n");
     printf("ID: %d\n", produtoAtualizado.id);
