@@ -1,5 +1,4 @@
-#ifndef PRODUTO_STRUCT_H
-#define PRODUTO_STRUCT_H
+#pragma once
 
 struct Produto {
     int id;
@@ -7,5 +6,3 @@ struct Produto {
     double preco;
     int quantidade;
 };
-
-#endif

@@ -1,5 +1,5 @@
-#ifndef VIEW
-#define VIEW_H
+#pragma once
+
 #include <vector>
 #include "../types/produto_struct.h"
 using namespace std;
@@ -12,5 +12,3 @@ Produto telaAtualizarProduto();
 char telaSucessoAtualizacao(Produto produtoAtualizado);
 int telaParaPassarId();
 char telaSucessoDeletar(Produto produtoDeletado);
-
-#endif

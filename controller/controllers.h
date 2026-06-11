@@ -1,5 +1,4 @@
-#ifndef CONTROLLERS_H
-#define CONTROLLERS_H
+#pragma once
 
 #include "../model/sqlite/sqlite3.h"
 #include "../model/produto.h"
@@ -13,4 +12,3 @@ void controllerCadastrarProduto(sqlite3* db);
 void controllerListarProdutos(sqlite3* db);
 void controllerAtualizarProduto(sqlite3* db);
 void controllerDeletarProduto(sqlite3* db);
-#endif
