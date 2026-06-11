@@ -19,7 +19,7 @@ void controllerMenuInicial (sqlite3* db) {
             controllerAtualizarProduto(db);
             break;
         case 4:
-            // controllerDeletarProduto();
+             controllerDeletarProduto(db);
             break;
         case 5:
             exit(0);
